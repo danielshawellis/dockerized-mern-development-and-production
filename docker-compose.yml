@@ -5,10 +5,10 @@ services:
   sample:
     container_name: sample
     build:
-      context: .
+      context: ./client
       dockerfile: Dockerfile
     volumes:
-      - '.:/app'
+      - './client:/app'
       - '/app/node_modules'
     ports:
       - 3001:3000
