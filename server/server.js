@@ -1,28 +1,25 @@
 const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require('body-parser');
+
+const PORT = process.env.PORT || 8080;
+
 const app = express();
-const connectDb = require("./src/connection");
-const User = require("./models/User.model");
 
-const PORT = 8080;
+// Require Routes
+const items = require('./routes/api/items');
 
-app.get("/users", async (req, res) => {
-  const users = await User.find();
+// Bodyparser Middleware
+app.use(bodyParser.json());
 
-  res.json(users);
-});
+// Connect to Mongo
+mongoose.set('useNewUrlParser', true);
+mongoose.connect("mongodb://mongo:27017/mongo-test")
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
 
-app.get("/user-create", async (req, res) => {
-  const user = new User({ username: "userTest" });
+// Use Routes
+app.use('/api/items', items);
 
-  await user.save().then(() => console.log("User created"));
-
-  res.send("User created \n");
-});
-
-app.listen(PORT, function() {
-  console.log(`Listening on ${PORT}`);
-
-  connectDb().then(() => {
-    console.log("MongoDb connected");
-  });
-});
+// Start Server
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
