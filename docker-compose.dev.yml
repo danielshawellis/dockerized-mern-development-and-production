@@ -5,7 +5,7 @@ services:
   react:
     build:
       context: ./client
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     volumes:
       - './client:/app'
       - '/app/node_modules'
@@ -19,7 +19,7 @@ services:
   node:
     build:
       context: ./server
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     volumes:
       - './server:/usr/src/app'
     ports:

@@ -1,1 +1,27 @@
-# Set NODE_ENV=production here
+version: '3.7'
+
+services:
+
+  react:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.prod
+    volumes:
+    ports:
+    depends_on:
+      - node
+    environment:
+  node:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.prod
+    volumes:
+    ports:
+    depends_on:
+      - mongo
+    environment:
+      - NODE_ENV=production
+      - DB_URI=${PROD_DB_URI}
+  mongo:
+    image: mongo
+    ports:
