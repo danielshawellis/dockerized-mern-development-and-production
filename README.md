@@ -2,11 +2,11 @@
 
 ## Composing the Development Environment
 
-To compose the development environment, run `docker-compose up -d --build`.
+To compose the development environment, run `docker-compose -f docker-compose.dev.yml up -d --build`.
 
-The front end will be accesible at http://localhost:3000.
+The front end will be accesible at http://localhost:3000. To set this to a different port, change `DEV_CLIENT_PORT` in the .env file.
 
-The back end will be accessible at http://localhost:8080.
+The back end will be accessible at http://localhost:8080. To set this to a different port, change `DEV_SERVER_PORT` in the .env file.
 
 ## Debugging the Development Environment
 
@@ -16,4 +16,4 @@ It may also help to remove the `--silent` flag for the npm installs in the clien
 
 ## Tearing Down the Development Environment
 
-To tear down the development environment and remove all volumes, run `docker-compose down --volumes --remove-orphans`
+To tear down the development environment and remove all volumes, run `docker-compose -f docker-compose.dev.yml down --volumes --remove-orphans`
