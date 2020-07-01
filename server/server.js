@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 8080;
+const DB_URI = process.env.DB_URI || "mongodb://mongo:27017/mongo-test";
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.use(bodyParser.json());
 
 // Connect to Mongo
 mongoose.set('useNewUrlParser', true);
-mongoose.connect("mongodb://mongo:27017/mongo-test")
+mongoose.connect(DB_URI)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 

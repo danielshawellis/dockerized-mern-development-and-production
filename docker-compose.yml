@@ -10,7 +10,7 @@ services:
       - './client:/app'
       - '/app/node_modules'
     ports:
-      - 3000:3000
+      - "${DEV_CLIENT_PORT}:3000"
     depends_on:
       - node
     environment:
@@ -23,10 +23,12 @@ services:
     volumes:
       - './server:/usr/src/app'
     ports:
-      - "8080:8080"
+      - "${DEV_SERVER_PORT}:8080"
     depends_on:
       - mongo
+    env_file:
+      - dev.env
   mongo:
     image: mongo
     ports:
-      - "27017:27017"
+      - "${DEV_DB_PORT}:27017"
