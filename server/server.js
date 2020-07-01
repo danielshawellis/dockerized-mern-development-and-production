@@ -1,8 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 8080;
+const CLIENT_DEV_PORT = process.env.CLIENT_DEV_PORT || 3000;
 const DB_URI = process.env.DB_URI || "mongodb://mongo:27017/mongo-test";
 
 const app = express();
@@ -12,6 +14,9 @@ const items = require('./routes/api/items');
 
 // Bodyparser Middleware
 app.use(bodyParser.json());
+
+// CORS Middleware to Prevent CORS Errors During Development
+if (process.env.NODE_ENV !== 'production') app.use(cors({origin: `http://localhost:${CLIENT_DEV_PORT}`}));
 
 // Connect to Mongo
 mongoose.set('useNewUrlParser', true);

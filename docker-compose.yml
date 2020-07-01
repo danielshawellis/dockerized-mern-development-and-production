@@ -16,6 +16,8 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
     stdin_open: true
+    env_file:
+      - dev-client.env
   node:
     build:
       context: ./server
@@ -27,7 +29,7 @@ services:
     depends_on:
       - mongo
     env_file:
-      - dev.env
+      - dev-server.env
   mongo:
     image: mongo
     ports:
