@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import config from "../config"
+import config from "../../config";
+import "./items.scss"
 
 const API_URL = config.apiUrl;
 
@@ -13,19 +14,21 @@ class Items extends Component {
     render() {
         return (
             <React.Fragment>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Item:
-                        <input type="text" value={this.state.inputValue} onChange={this.handleChange} />
-                    </label>
-                <input type="submit" value="Submit" />
-                </form>
-                <ul>{this.state.items.map( item =>
-                    <li key={item._id}>
-                        {item.name}
-                        <button onClick={() => this.handleDelete(item._id)}>DELETE</button>
-                    </li>
-                )}</ul>
+                <div className="component-items">
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            Item:
+                            <input className="item-input" type="text" value={this.state.inputValue} onChange={this.handleChange} />
+                        </label>
+                    <input type="submit" value="Submit" />
+                    </form>
+                    <ul>{this.state.items.map( item =>
+                        <li className="item" key={item._id}>
+                            {item.name}
+                            <button onClick={() => this.handleDelete(item._id)}>DELETE</button>
+                        </li>
+                    )}</ul>
+                </div>
             </React.Fragment>
         );
     };
