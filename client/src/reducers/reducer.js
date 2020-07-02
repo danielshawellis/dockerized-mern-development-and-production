@@ -1,4 +1,4 @@
-import * as actionNames from './actions';
+import * as actionNames from '../actions/ACTIONS';
 
 let initialtState = {
   items: [

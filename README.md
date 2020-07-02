@@ -65,3 +65,4 @@ This project was created using a number of resources, all of which may be helpfu
     * Explains how to configure React Router alongside NGINX in production 
 * [Stack Overflow On React Scripts Exiting In Cotainers](https://stackoverflow.com/questions/60790696/react-scripts-start-exiting-in-docker-foreground-cmd)
     * Explains the use of `stdin_open: true` within docker-compose files
+* [Video Guide to Creating Multiple Actions and Reducers and Applying Middleware in React-Redux](https://youtu.be/YmGm-qwbJdc)
