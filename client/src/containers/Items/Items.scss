@@ -1,5 +1,7 @@
+@import "../../theme";
+
 .component-items {
     .item-input {
-        margin: 0 10px;
+        margin: $margin;
     }
 }
