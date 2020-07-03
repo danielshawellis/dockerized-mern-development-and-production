@@ -20,7 +20,17 @@ It may also help to remove the `--silent` flag for the npm installs in the clien
 
 To continually see errors thrown in the Node container, attach your terminal to it by running `docker attach [NAME_OF_NODE_CONTAINER_HERE]`.
 
+You can attach to the database and client containers in the same way using `docker attach [NAME_OF_MONGO_CONTAINER_HERE]` or `docker attach [NAME_OF_REACT_CONTAINER_HERE]`.
+
 To see the names of your running containers, run `docker ps` and look under the "NAMES" column.
+
+To debug React and Redux, install the following Chrome extensions:
+
+* [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+
+* [Redux Developer Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
+
+To test the API, install [Postman](https://www.postman.com/downloads/) and access the API through http://localhost:8080 or whatever development port you've set in the .env file.
 
 ### Entering the Development Containers
 
@@ -66,3 +76,4 @@ This project was created using a number of resources, all of which may be helpfu
 * [Stack Overflow On React Scripts Exiting In Cotainers](https://stackoverflow.com/questions/60790696/react-scripts-start-exiting-in-docker-foreground-cmd)
     * Explains the use of `stdin_open: true` within docker-compose files
 * [Video Guide to Creating Multiple Actions and Reducers and Applying Middleware in React-Redux](https://youtu.be/YmGm-qwbJdc)
+* [Guide to Creating a Basic Dockerized Production MERN Stack](https://dev.to/vguleaev/dockerize-a-node-js-app-with-vs-code-29c4)
