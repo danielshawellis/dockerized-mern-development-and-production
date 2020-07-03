@@ -3,9 +3,9 @@ import './Item.scss'
 
 export const Item = (props) => {
     return (
-        <li className="component-item" key={props.id}>
+        <li className="component-item">
             {props.name}
-            <button onClick={() => props.onDelete(props.id)}>DELETE</button>
+            <button onClick={() => props.onDelete()}>DELETE</button>
         </li>
     );
 };
