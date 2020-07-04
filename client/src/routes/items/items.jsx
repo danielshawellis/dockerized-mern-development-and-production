@@ -1,11 +1,14 @@
 import React from 'react';
+import './items.scss';
 
 import Items from '../../containers/Items/Items'
 
 // @route: /items
 const ItemsRoute = (props) => {
     return (
-        <Items />
+        <div className="route-items">
+            <Items />
+        </div>
     );
 };
 
