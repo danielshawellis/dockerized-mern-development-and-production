@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { handleUpdate, handleInputChange, handleFormSubmit, handleDelete } from '../../actions/items';
 import "./Items.scss";
 
-import { Item } from '../../components/Item/Item';
+import Item from '../../components/Item/Item';
 
 class Items extends Component {
     render() {

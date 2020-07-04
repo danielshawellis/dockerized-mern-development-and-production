@@ -1,4 +1,11 @@
 // Global SCCS Theme File
 // These variables can be accessed in other SCSS files using @import "path/to/this/file/theme";
 
-$margin: 10px;
+// Spacing
+$container-width: 960px;
+
+// Colors
+$dark-grey: #404040;
+$light-grey: #f7f7f7;
+$standard-text: #333;
+$light-text: #fff;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Item.scss'
 
-export const Item = (props) => {
+const Item = (props) => {
     return (
         <li className="component-item">
             {props.name}
@@ -9,3 +9,5 @@ export const Item = (props) => {
         </li>
     );
 };
+
+export default Item;

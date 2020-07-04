@@ -1,0 +1,29 @@
+@import '../../theme';
+
+header {
+    background-color: $dark-grey;
+    color: $light-text;
+
+    a {
+        color: $light-text;
+        text-decoration: none;
+    }
+
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: $container-width;
+        margin: auto;
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+    
+            li {
+                margin: 0 10px;
+            }
+        }
+    }
+}

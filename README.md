@@ -77,3 +77,4 @@ This project was created using a number of resources, all of which may be helpfu
     * Explains the use of `stdin_open: true` within docker-compose files
 * [Video Guide to Creating Multiple Actions and Reducers and Applying Middleware in React-Redux](https://youtu.be/YmGm-qwbJdc)
 * [Guide to Creating a Basic Dockerized Production MERN Stack](https://dev.to/vguleaev/dockerize-a-node-js-app-with-vs-code-29c4)
+* [Guide to React Router Including Dynamic Routing](https://youtu.be/Law7wfdg_ls)
