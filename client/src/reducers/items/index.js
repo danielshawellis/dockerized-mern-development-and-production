@@ -1,4 +1,4 @@
-import * as actionNames from '../actions/ACTIONS';
+import * as actionNames from '../../actions/ACTIONS';
 
 let initialtState = {
   items: [],
@@ -7,22 +7,22 @@ let initialtState = {
 
 const reducer = ( state = initialtState, action ) => {
   switch ( action.type ) {
-    case actionNames.UPDATE_ALL_SUCCESS: {        
+    case actionNames.ITEMS_UPDATE_ALL_SUCCESS: {        
       const items = action.payload;        
       return { ...state, items };
     };
 
-    case actionNames.UPDATE_ALL_FAILURE: {        
+    case actionNames.ITEMS_UPDATE_ALL_FAILURE: {        
       const err = action.payload;       
       return { ...state };
     };
 
-    case actionNames.UPDATE_INPUT_CONTENTS: {        
+    case actionNames.ITEMS_UPDATE_INPUT_CONTENTS: {        
       const inputValue = action.payload;        
       return { ...state, inputValue };
     };
 
-    case actionNames.SUBMIT_ITEM_SUCCESS: {                
+    case actionNames.ITEMS_SUBMIT_ITEM_SUCCESS: {                
       const newItem = {
         _id: action.payload.id,
         name: action.payload.name,
@@ -31,17 +31,17 @@ const reducer = ( state = initialtState, action ) => {
       return { ...state, items };
     };
 
-    case actionNames.SUBMIT_ITEM_FAILURE: {
+    case actionNames.ITEMS_SUBMIT_ITEM_FAILURE: {
       const err = action.payload;
       return { ...state };
     }
 
-    case actionNames.DELETE_ITEM_SUCCESS: {        
+    case actionNames.ITEMS_DELETE_ITEM_SUCCESS: {        
       const items = state.items.filter(item => item._id !== action.payload);       
       return { ...state, items };
     };
 
-    case actionNames.DELETE_ITEM_FAILURE: {      
+    case actionNames.ITEMS_DELETE_ITEM_FAILURE: {      
       const err = action.payload;
       return { ...state };
     }

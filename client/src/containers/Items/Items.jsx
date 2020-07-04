@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { handleUpdate, handleInputChange, handleFormSubmit, handleDelete } from '../../actions/action';
+import { handleUpdate, handleInputChange, handleFormSubmit, handleDelete } from '../../actions/items';
 import "./Items.scss";
 
 import { Item } from '../../components/Item/Item';
