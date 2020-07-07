@@ -12,8 +12,8 @@ const app = express();
 // Require Routes
 const items = require('./routes/api/items');
 
-// Bodyparser Middleware
-app.use(bodyParser.json());
+// Express Middleware to Handle JSON
+app.use(express.json());
 
 // CORS Middleware to Prevent CORS Errors During Development
 if (process.env.NODE_ENV === 'development') app.use(cors({origin: `http://localhost:${DEV_CLIENT_PORT}`}));
